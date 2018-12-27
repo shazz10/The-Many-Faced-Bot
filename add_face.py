@@ -8,16 +8,16 @@ def add_face(name):
 	face_cascade = cv2.CascadeClassifier('haarcascade_frontalface_default.xml')
 
 	while vc.isOpened():
-	    _, frame = vc.read()
+	    ret, frame = vc.read()
 
 	    gray = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
-
-	    faces = face_cascade.detectMultiScale(gray, 1.3, 5)
+	    img=frame
+	    boxes = face_cascade.detectMultiScale(gray, 1.3, 5)
 	    x1=0
 	    y1=0
 	    x2=0
 	    y2=0
-	    for (x, y, w, h) in faces:
+	    for (x, y, w, h) in boxes:
 	        x1 = x-pad
 	        y1 = y-pad
 	        x2 = x+w+pad

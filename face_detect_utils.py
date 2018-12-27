@@ -3,7 +3,6 @@ import numpy as np
 import os
 import cv2
 import tensorflow as tf
-from multiprocessing.dummy import Pool
 import glob
 
 detect = True
@@ -67,6 +66,7 @@ def many_faced_bot(faces,MFmodel):
                 detect = False
 
         else :
+            detect=True
             break
         key = cv2.waitKey(100)
         cv2.imshow("Many-Faced-Bot", img)

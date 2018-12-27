@@ -1,12 +1,9 @@
 from keras import backend as K
-import time
-from multiprocessing.dummy import Pool
 K.set_image_data_format('channels_first')
 import cv2
 import os
 import glob
 import numpy as np
-from numpy import genfromtxt
 import tensorflow as tf
 from keras.models import model_from_yaml
 from face_detect_utils import *
